@@ -3,10 +3,11 @@ name: Publish
 on:
   workflow_dispatch:
     inputs:
-      name:
-        type: choice
+      version:
         description: 'Which version to bump?'
         required: true
+        type: choice
+        default: 'patch'
         options:
           - patch
           - minor
