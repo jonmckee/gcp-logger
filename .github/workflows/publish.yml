@@ -12,13 +12,6 @@ on:
           - patch
           - minor
           - major
-
-  name:
-    type: choice
-    description: Who to greet
-    options:
-      - monalisa
-      - cschleiden
 jobs:
   build:
     runs-on: ubuntu-latest
