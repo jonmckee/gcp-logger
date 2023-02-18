@@ -1,6 +1,6 @@
 {
   "name": "@jonmckee/next-logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Jon McKee",
   "description": "Winston logger for Next which adds a correlation-id",
   "main": "index.js",
