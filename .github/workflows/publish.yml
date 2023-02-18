@@ -31,9 +31,6 @@ jobs:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
-      - run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'jonrmckee@gmail.com'
       - run: npm version ${{github.event.inputs.version}}
       - run: git push --follow-tags
       - run: npm publish
