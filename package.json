@@ -32,9 +32,6 @@
         "statements": 100
       }
     },
-    "setupFiles": [
-      "<rootDir>/test/setup.js"
-    ],
     "transform": {}
   }
 }
