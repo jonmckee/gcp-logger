@@ -1,0 +1,40 @@
+{
+  "name": "@jonmckee/next-logger",
+  "version": "1.0.0",
+  "author": "Jon McKee",
+  "description": "Winston logger for Next which adds a correlation-id",
+  "main": "index.js",
+  "type": "module",
+  "license": "ISC",
+  "release": {},
+  "engines": {
+    "node": "^18"
+  },
+  "scripts": {
+    "coverage": "npx jest --coverage"
+  },
+  "dependencies": {
+    "correlation-id": "^5.0.0",
+    "winston": "3.8.2"
+  },
+  "devDependencies": {
+    "jest": "^29.4.3"
+  },
+  "peerDependencies": {
+    "next": "^13.1.6"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "setupFiles": [
+      "<rootDir>/test/setup.js"
+    ],
+    "transform": {}
+  }
+}
