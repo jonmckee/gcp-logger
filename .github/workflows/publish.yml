@@ -29,15 +29,15 @@ jobs:
       contents: write
       packages: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
       - run: |
           git config --global user.name 'GitHub Actions'
-          git config --global user.email 'jonrmckee@gmail.com'
+          git config --global user.email 'jonmckee@users.noreply.github.com'
       - run: npm version ${{github.event.inputs.version}}
       - run: git push --follow-tags
       - run: npm publish
