@@ -1,4 +1,5 @@
 import {getId, withId} from 'correlation-id'
+import type {Logger} from 'winston';
 import {createLogger, format, transports} from "winston";
 import {LoggingWinston} from '@google-cloud/logging-winston'
 
@@ -16,7 +17,7 @@ export const withCorrelationId = (handler: (req: any, res: any) => void) => (req
     }
 }
 
-export default createLogger({
+const logger: Logger = createLogger({
     format: format.combine(
         format((info: any) => {
             info.correlationId = getId()
@@ -27,3 +28,5 @@ export default createLogger({
     ),
     transports: [new transports.Console(), new LoggingWinston()]
 })
+
+export default logger

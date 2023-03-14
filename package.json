@@ -21,6 +21,7 @@
     "winston": "3.8.2"
   },
   "devDependencies": {
+    "@types/winston": "2.4.4",
     "typescript": "4.9.5"
   }
 }
