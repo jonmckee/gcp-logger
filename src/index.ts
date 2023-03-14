@@ -1,8 +1,8 @@
 import {getId, withId} from 'correlation-id'
-import {createLogger, format, transports, Logger} from "winston";
+import {createLogger, format, transports} from "winston";
 import {LoggingWinston} from '@google-cloud/logging-winston'
 
-const withCorrelationId = (handler: (req: any, res: any) => void) => (req: any, res: any) => {
+export const withCorrelationId = (handler: (req: any, res: any) => void) => (req: any, res: any) => {
     const existingId = req.headers['correlation-id'] as string
 
     if (Boolean(existingId)) {
@@ -16,21 +16,14 @@ const withCorrelationId = (handler: (req: any, res: any) => void) => (req: any, 
     }
 }
 
-const createLog: () => Logger = () => {
-    return createLogger({
-        format: format.combine(
-            format((info: any) => {
-                info.correlationId = getId()
+export default createLogger({
+    format: format.combine(
+        format((info: any) => {
+            info.correlationId = getId()
 
-                return info
-            })(),
-            format.json()
-        ),
-        transports: [new transports.Console(), new LoggingWinston()]
-    }) as Logger;
-}
-
-export {
-    createLog,
-    withCorrelationId
-}
+            return info
+        })(),
+        format.json()
+    ),
+    transports: [new transports.Console(), new LoggingWinston()]
+})
