@@ -1,7 +1,9 @@
-import {getId, withId} from 'correlation-id'
+import correlation from 'correlation-id'
 import type {Logger} from 'winston';
 import {createLogger, format, transports} from "winston";
 import {LoggingWinston} from '@google-cloud/logging-winston'
+
+const {withId, getId} = correlation
 
 export const withCorrelationId = (handler: (req: any, res: any) => void) => (req: any, res: any) => {
     const existingId = req.headers['correlation-id'] as string
