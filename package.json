@@ -1,8 +1,8 @@
 {
-  "name": "@jonmckee/next-logger",
-  "version": "4.0.0",
+  "name": "@jonmckee/gcp-logger",
+  "version": "0.0.1",
   "author": "Jon McKee",
-  "description": "Winston logger for Next which adds a correlation-id",
+  "description": "Winston logger for Google Cloud Platform",
   "main": "lib/index.js",
   "type": "module",
   "license": "ISC",
