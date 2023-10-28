@@ -6,9 +6,6 @@
   "main": "lib/index.js",
   "type": "module",
   "license": "ISC",
-  "engines": {
-    "node": "^18"
-  },
   "files": [
     "lib/**/*"
   ],
