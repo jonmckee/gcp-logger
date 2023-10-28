@@ -1,6 +1,6 @@
 {
   "name": "@jonmckee/gcp-logger",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Jon McKee",
   "description": "Winston logger for Google Cloud Platform",
   "main": "lib/index.js",
